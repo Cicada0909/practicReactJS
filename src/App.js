@@ -1,17 +1,13 @@
 import './App.css';
-import FirstComponent from './components/FirstComponent/FirstComponent';
-import Counter from './components/Counter/Counter'
+import UsersList from './components/UsersList/UsersList';
+import ToDoList from './components/ToDoList/ToDoList';
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
-
-      <Counter />
-
-      <FirstComponent userName={"Ivan"}/>
-      <FirstComponent userName ="Alex"/>
-      <FirstComponent userName="Oleg"/>
+      <ToDoList />
     </div>
   );
 }
