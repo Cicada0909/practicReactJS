@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className={styles.nav}>
         <Link to={"/"}>Home</Link>
         <Link to={"/about"}>About</Link>
-        <Link to={"/user/123"}>User 123</Link>
+        <Link to={"/albums"}>Albums</Link>
     </nav>
   )
 }
