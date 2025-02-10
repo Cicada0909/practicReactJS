@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import User from "./pages/User/User";
 import Albums from "./pages/Albums/Albums";
 import Album from "./pages/Album/Album";
+import Form from "./pages/Form/Form";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/user/:id" element={<User />} />
         <Route path="/albums" element={<Albums />} />
           <Route path="/albums/:id" element={<Album />} />
+        <Route path="/form" element={<Form />} />
       </Routes>
     </BrowserRouter>
   );
