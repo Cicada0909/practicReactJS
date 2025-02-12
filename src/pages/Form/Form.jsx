@@ -6,28 +6,28 @@ import StepForm from '../../components/StepForm/StepForm';
 const Form = () => {
     // const [name, setName] = useState("");
     // const [email, setEmail] = useState("");
-    const [formData, setFormData] = useState({
-        formName: "",
-        formEmail: "",
-        formPass: "",
-    });
+    // const [formData, setFormData] = useState({
+    //     formName: "",
+    //     formEmail: "",
+    //     formPass: "",
+    // });
 
-    const hadleSubmit = (event) => {
-        event.preventDefault();
-    }
+    // const hadleSubmit = (event) => {
+    //     event.preventDefault();
+    // }
 
-    const handleChange = (event) => {
-        const inputName = event.target.name;
-        const inputValue = event.target.value;
+    // const handleChange = (event) => {
+    //     const inputName = event.target.name;
+    //     const inputValue = event.target.value;
 
-        setFormData((prev) => ({
-            ...prev,
-            [inputName]: inputValue,
-        }))
+    //     setFormData((prev) => ({
+    //         ...prev,
+    //         [inputName]: inputValue,
+    //     }))
 
-    console.log(formData);
+    // console.log(formData);
         
-    }
+    // }
 
     return (
     // <div>

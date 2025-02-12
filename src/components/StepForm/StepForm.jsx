@@ -4,6 +4,8 @@ import Input from '../ui/Input/Input'
 
 
 const StepForm = () => {
+    const [step, setStep] = useState(1);
+
     const [stepFormData, setStepFormData] = useState({
         stepFormName: "",
         stepFormEmail: "",
@@ -21,7 +23,9 @@ const StepForm = () => {
 
     const handleChange = (event) => {
         const inputName = event.target.name;
-        const inputValue = event.target.value;
+        const inputValue = event.target.value.trim();;
+
+        if (inputValue === "") return
 
         setStepFormData((prev) => ({
             ...prev,
@@ -29,33 +33,42 @@ const StepForm = () => {
         }))
     }
 
+    const nextStep = () => {
+        setStep((prev) => {
+            console.log(prev + 1);
+            return prev + 1;
+        })
+    }
+
     return (
         <div>
             <h3>Form</h3>
 
             <form className={styles.form} onSubmit={hadleSubmit}>
-                <Input
-                    labelText={"Имя"}
-                    type={"text"}
-                    id={"name"}
-                    placeholder={"Введите ваше имя"}
-                    onChange={handleChange}
-                    name={"stepFormName"}
-                />
+                <div className={styles.form__items}>
+                    <Input
+                        labelText={"Имя"}
+                        type={"text"}
+                        id={"name"}
+                        placeholder={"Введите ваше имя"}
+                        onChange={handleChange}
+                        name={"stepFormName"}
+                    />
 
-                <Input
-                    labelText={"Почта"}
-                    type={"email"}
-                    id={"email"}
-                    placeholder={"Введите почту"}
-                    onChange={handleChange}
-                    name={"stepFormEmail"}
-                />
+                    <Input
+                        labelText={"Почта"}
+                        type={"email"}
+                        id={"email"}
+                        placeholder={"Введите почту"}
+                        onChange={handleChange}
+                        name={"stepFormEmail"}
+                    />
 
-                {stepFormData.stepFormName.length > 1 &&
-                stepFormData.stepFormEmail.length > 1 &&
-                stepFormData.stepFormEmail.includes("@") &&
-                <div>
+                    {step == 1 && <button onClick={nextStep}>Вперед</button>}
+                </div>
+
+                {step > 1 &&
+                <div className={styles.form__items}>
                     <Input
                         labelText={"Возраст"}
                         type={"number"}
@@ -73,15 +86,13 @@ const StepForm = () => {
                         onChange={handleChange}
                         name={"stepFormCity"}
                     />
+
+                    {step == 2 && <button onClick={nextStep}>Вперед</button>}
                 </div>
                 }
 
-                {stepFormData.stepFormName.length > 1 &&
-                stepFormData.stepFormEmail.length > 1 &&
-                stepFormData.stepFormEmail.includes("@") &&
-                stepFormData.stepFormAge.length > 0 &&
-                stepFormData.stepFormCity.length > 1 &&
-                <div>
+                {step > 2 &&
+                <div className={styles.form__items}>
                     <Input
                         labelText={"Пароль"}
                         type={"text"}
@@ -99,16 +110,12 @@ const StepForm = () => {
                         onChange={handleChange}
                         name={"stepFormConfirmPassword"}
                     />
+
+                {step == 3 && <button onClick={nextStep}>Вперед</button>}
                 </div>
                 }
 
-                {stepFormData.stepFormName.length > 1 &&
-                stepFormData.stepFormEmail.length > 1 &&
-                stepFormData.stepFormEmail.includes("@") &&
-                stepFormData.stepFormAge.length > 0 &&
-                stepFormData.stepFormCity.length > 1 &&
-                stepFormData.stepFormPassword.length > 1 &&
-                stepFormData.stepFormConfirmPassword.length > 1 &&
+                {step > 3 &&
                 <div>
                     <button>Отправить</button>
                 </div>

@@ -6,6 +6,7 @@ import User from "./pages/User/User";
 import Albums from "./pages/Albums/Albums";
 import Album from "./pages/Album/Album";
 import Form from "./pages/Form/Form";
+import UncotrolledForm from "./pages/UncontrolledForm/UncotrolledForm";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/albums" element={<Albums />} />
           <Route path="/albums/:id" element={<Album />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/uncotrolled" element={<UncotrolledForm />} />
       </Routes>
     </BrowserRouter>
   );
