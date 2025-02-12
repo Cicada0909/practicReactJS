@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Form.module.css';
 import Input from '../../components/ui/Input/Input';
+import StepForm from '../../components/StepForm/StepForm';
 
 const Form = () => {
     // const [name, setName] = useState("");
@@ -29,44 +30,45 @@ const Form = () => {
     }
 
     return (
-    <div>
-        <h3>Form</h3>
+    // <div>
+    //     <h3>Form</h3>
 
-        <form className={styles.form} onSubmit={hadleSubmit}>
-            <Input 
-                labelText={"Имя"}
-                type={"text"}
-                id={"name"}
-                placeholder={"Введите ваше имя"}
-                // value={name}
-                // onChange={(event) => setName(event.target.value)}
-                onChange={handleChange}
-                name={"formName"}
+    //     <form className={styles.form} onSubmit={hadleSubmit}>
+    //         <Input 
+    //             labelText={"Имя"}
+    //             type={"text"}
+    //             id={"name"}
+    //             placeholder={"Введите ваше имя"}
+    //             // value={name}
+    //             // onChange={(event) => setName(event.target.value)}
+    //             onChange={handleChange}
+    //             name={"formName"}
 
-            />
+    //         />
 
-            <Input 
-                labelText={"Почта"}
-                type={"email"}
-                id={"email"}
-                placeholder={"Введите почту"}
-                // value={email}
-                // onChange={(event) => setEmail(event.target.value)}
-                onChange={handleChange}
-                name={"formEmail"}
-            />
+    //         <Input 
+    //             labelText={"Почта"}
+    //             type={"email"}
+    //             id={"email"}
+    //             placeholder={"Введите почту"}
+    //             // value={email}
+    //             // onChange={(event) => setEmail(event.target.value)}
+    //             onChange={handleChange}
+    //             name={"formEmail"}
+    //         />
 
-            {/* {email.includes("@") && 
-                <Input
-                    labelText={"Доп поле"}
-                    type={"number"}
-                    id={"number"}
-                    placeholder={"Test"}
-            />} */}
+    //         {/* {email.includes("@") && 
+    //             <Input
+    //                 labelText={"Доп поле"}
+    //                 type={"number"}
+    //                 id={"number"}
+    //                 placeholder={"Test"}
+    //         />} */}
 
-            <button>Отправить</button>
-        </form>
-    </div>
+    //         <button>Отправить</button>
+    //     </form>
+    // </div>
+    <StepForm />
   )
 }
 
