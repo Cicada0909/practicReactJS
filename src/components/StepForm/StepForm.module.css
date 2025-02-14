@@ -1,7 +1,6 @@
 .form {
     max-width: 500px;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -11,4 +10,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
 }
