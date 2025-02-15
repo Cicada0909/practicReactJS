@@ -54,7 +54,7 @@ const StepForm = () => {
             <form className={styles.form} onSubmit={hadleSubmit}>
                 <div className={styles.form__items}>
 
-                    {step == 1 &&
+                    {step === 1 &&
                         <div className={styles.form__items}>
                             <Input
                                 labelText={"Имя"}
@@ -74,16 +74,15 @@ const StepForm = () => {
                                 name={"stepFormEmail"}
                             />
 
-                            {step == 1 &&
-                                <div className={styles.navigation}>
-                                    <button onClick={backStep} disabled={step == 1}>Назад</button>
-                                    <button onClick={nextStep}>Вперед</button>
-                                </div>
-                            }
+                            <div className={styles.navigation}>
+                                <button onClick={backStep} disabled={step === 1}>Назад</button>
+                                <button onClick={nextStep}>Вперед</button>
+                            </div>
+                            
                         </div>
                     }
 
-                    {step == 2 &&
+                    {step === 2 &&
                         <div className={styles.form__items}>
                             <Input
                                 labelText={"Возраст"}
@@ -103,16 +102,14 @@ const StepForm = () => {
                                 name={"stepFormCity"}
                             />
 
-                            {step == 2 &&
-                                <div className={styles.navigation}>
-                                    <button onClick={backStep}>Назад</button>
-                                    <button onClick={nextStep}>Вперед</button>
-                                </div>
-                            }
+                            <div className={styles.navigation}>
+                                <button onClick={backStep}>Назад</button>
+                                <button onClick={nextStep}>Вперед</button>
+                            </div>
                         </div>
                     }
 
-                    {step > 2 &&
+                    {step === 3 &&
                         <div className={styles.form__items}>
                             <Input
                                 labelText={"Пароль"}
@@ -132,13 +129,11 @@ const StepForm = () => {
                                 name={"stepFormConfirmPassword"}
                             />
 
-                        </div>
-                    }
+                            <div className={styles.navigation}>
+                                <button onClick={backStep}>Назад</button>
+                                <button>Отправить</button>
+                            </div>
 
-                    {step == 3 &&
-                        <div className={styles.navigation}>
-                            <button onClick={backStep}>Назад</button>
-                            <button>Отправить</button>
                         </div>
                     }
                 </div>
